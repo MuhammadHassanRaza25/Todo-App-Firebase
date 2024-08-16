@@ -117,61 +117,55 @@ body{
 /* List Styling End */
 
 @media(max-width:1024px){
+    .todoDiv{
+        width: 80%;
+    }
+    .inpBtnDiv{
+        justify-content: center;
+    }
     .todoInput{
-        width: 60%;
-        font-size: 15px;
-        padding: 8px;
+        width: 100%;
     }
     .todoBtn{
-        padding: 8px;
+        width: 800px;
         font-size: 18px;
      }
-    .showListUl li{
-        font-size: 17px;
-        padding: 8px;
-     }
-     .showListUl li button{
-        padding: 8px;
-        font-size: 17px;
-    }
-}
-@media(max-width:850px){
-    .inpBtnDiv{
-        margin-top: 10%;
-        margin-bottom: 10%;
-    }
-    .todoInput{
-        width: 50%;
-    }
-    .showListUl li{
-        font-size: 17px;
-        padding: 8px;
-     }
-     .showListUl li button{
-        padding: 7px;
+     .showListUl li{
         font-size: 15px;
+     }
+     .showListUl li button{
+        padding: 5px;
+        width: 40px;
+        font-size: 17px;
     }
 }
-@media(max-width:683px){
-    .todoDiv{
-        width: 60%;
-    }
-}
-@media(max-width:515px){
+@media(max-width:660px){
     .todoDiv{
         width: 90%;
     }
     .todoInput{
-        width: 60%;
+        padding: 8px;
+    }
+    .showListUl li{
+        font-size: 13px;
+        padding: 8px;
+     }
+     .todoBtn{
+        padding: 8px;
+        width: 800px;
+        font-size: 18px;
+     }
+    .showListUl li button{
+        padding: 5px;
+        width: 35px;
     }
 }
 @media(max-width:430px){
-    .todoInput{
-        width: 52%;
-    }
-}
-@media(max-width:365px){
     .inpBtnDiv{
-        justify-content: center;
+        margin-top: 12%;
+        margin-bottom: 10%;
+    }
+    .todoInput{
+        font-size: 15px;
     }
 }
