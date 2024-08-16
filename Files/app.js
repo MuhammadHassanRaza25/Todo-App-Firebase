@@ -10,7 +10,7 @@ addBtn.addEventListener('click',async ()=>{
         const docRef = await addDoc(collection(db, "todoApp"), {
           todoValue: todoInput.value,
         });
-        console.log("Document written with ID: ", docRef.id);
+        // console.log("Document written with ID: ", docRef.id);
       } catch (e) {
         console.error("Error adding document: ", e);
       }
@@ -57,32 +57,28 @@ window.delTodo = delTodo;  // globaly set kia hai.
 
 // Edit doc from Firebase Database //
 let editTodo = async (docId)=>{
-
 // sweet alert start
-let editedVal = Swal.fire({
+let editVal = await Swal.fire({
   title: "Edit Your Todo",
   input: "text",
   inputPlaceholder: 'Enter Todo',
   showCancelButton: true,
   confirmButtonColor: "#3a47d5",
   cancelButtonColor: "#d33",
-  confirmButtonText: "Yes, Edit it"
-}).then((result) => {
-  if (result.isConfirmed) {
-    Swal.fire({
-      title: "Edited!",
-      text: "Your Todo has been Edited.",
-      icon: "success"
-    });
-  }
-}); 
-console.log(editedVal);
+  confirmButtonText: "Edit Todo"
+}) 
+const editedVal = editVal.value;
+// console.log(editedVal);
 // sweet alert end
 
-// edit doc
-  // const ref = doc(db, "cities", "DC");
-  // await updateDoc(ref, {
-  //   capital: true
-  // });
+// edit doc start
+  const ref = doc(db, "todoApp", docId);
+  await updateDoc(ref, {
+    todoValue: editedVal,
+  });
+// edit doc end
 }
 window.editTodo = editTodo;  // globaly set kia hai.
+// Edit doc from Firebase Database Fully Explain:
+// hamny editTodo ke onclick main '${doc.id}' di hai or string'' islye lagaya hai ke id string main ay. agar string'' nhi dete to ye id ko variable samjhe ga.
+// or apne function main docId se id get karke sweet alert ke input se edit ki hai.
